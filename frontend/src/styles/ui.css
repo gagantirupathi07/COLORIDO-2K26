@@ -1,0 +1,151 @@
+.glow-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 48px;
+  padding: 13px 20px;
+  border: 0;
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    #ff3cac,
+    #7c5cff
+  );
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  box-shadow:
+    0 12px 28px rgba(255, 60, 172, 0.22);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.glow-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+.glow-button:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 16px 34px rgba(255, 60, 172, 0.3);
+}
+
+.glow-button:hover::before {
+  left: 150%;
+}
+
+.glow-button:active {
+  transform: translateY(-1px);
+}
+
+.glow-button svg {
+  position: relative;
+  z-index: 1;
+}
+
+.glow-button span {
+  position: relative;
+  z-index: 1;
+}
+
+.section-heading {
+  width: 100%;
+  margin-bottom: 45px;
+}
+
+.section-heading.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-heading.left {
+  text-align: left;
+}
+
+.section-heading-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #ff3cac;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.section-heading-label::before {
+  content: "";
+  width: 24px;
+  height: 3px;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    #ff3cac,
+    #7c5cff
+  );
+}
+
+.section-heading h2 {
+  max-width: 750px;
+  color: #291a32;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+}
+
+.section-heading.center h2 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-heading p {
+  max-width: 650px;
+  margin-top: 15px;
+  color: #76667e;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.section-heading.center p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 600px) {
+  .glow-button {
+    min-height: 46px;
+    padding: 12px 17px;
+  }
+
+  .section-heading {
+    margin-bottom: 32px;
+  }
+
+  .section-heading h2 {
+    font-size: 2.2rem;
+  }
+
+  .section-heading p {
+    font-size: 0.92rem;
+  }
+}

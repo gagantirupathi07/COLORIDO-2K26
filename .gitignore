@@ -1,0 +1,29 @@
+# Java
+backend/com.colorido/target/
+*.class
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+backend/com.colorido/src/main/resources/application.properties
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Build files
+frontend/.vite/

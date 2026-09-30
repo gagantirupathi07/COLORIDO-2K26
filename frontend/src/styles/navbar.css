@@ -1,0 +1,298 @@
+.site-navbar {
+  position: fixed;
+  z-index: 1000;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1380px, calc(100% - 48px));
+  border: 1px solid rgba(160, 138, 194, 0.22);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 15px 45px rgba(91, 63, 112, 0.1);
+  backdrop-filter: blur(20px);
+}
+
+.navbar-container {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  padding: 0 26px;
+  gap: 35px;
+}
+
+.navbar-brand {
+  min-width: 320px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: #18121f;
+  text-decoration: none;
+}
+
+.navbar-college-logo {
+  width: 55px;
+  height: 55px;
+  flex: 0 0 55px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.navbar-college-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.navbar-brand-content {
+  min-width: 0;
+}
+
+.navbar-event-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.4rem;
+  font-weight: 950;
+  letter-spacing: -0.8px;
+}
+
+.navbar-event-name span {
+  background: linear-gradient(
+    90deg,
+    #ff4f92,
+    #a08ac2
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.navbar-event-name strong {
+  color: #4ecff5;
+}
+
+.navbar-brand-content p {
+  margin: 2px 0 0;
+  color: #756b7e;
+  font-size: 0.65rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.navbar-links {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+}
+
+.navbar-links > a:not(.navbar-register):not(.navbar-login) {
+  padding: 10px 11px;
+  color: #4c4353;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: 0.2s ease;
+}
+
+.navbar-links > a:not(.navbar-register):not(.navbar-login):hover {
+  color: #8a5fb2;
+  background: #faf5fd;
+}
+
+.navbar-login,
+.navbar-register {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 16px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.navbar-login {
+  border: 1px solid #ddd1e6;
+  color: #744f91;
+  background: #ffffff;
+}
+
+.navbar-login:hover {
+  border-color: #a08ac2;
+  background: #faf6fd;
+}
+
+.navbar-register {
+  color: #ffffff;
+  background: linear-gradient(
+    90deg,
+    #ff4f92,
+    #a08ac2
+  );
+  box-shadow: 0 8px 20px rgba(160, 138, 194, 0.25);
+}
+
+.navbar-register:hover {
+  transform: translateY(-1px);
+}
+
+.navbar-user {
+  max-width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #714f8d;
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.navbar-logout {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 15px;
+  border: 1px solid #eadce9;
+  border-radius: 12px;
+  background: #fff7fb;
+  color: #a33c68;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.navbar-menu-button {
+  display: none;
+  width: 42px;
+  height: 42px;
+  margin-left: auto;
+  border: 1px solid #e5dbea;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #714f8d;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.mobile-user {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #faf6fd;
+  color: #714f8d;
+  font-weight: 900;
+}
+
+.mobile-logout {
+  padding: 13px 14px;
+  border: 0;
+  border-radius: 12px;
+  background: #fff1f6;
+  color: #a33c68;
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+@media (max-width: 1150px) {
+  .navbar-brand {
+    min-width: 260px;
+  }
+
+  .navbar-links {
+    gap: 2px;
+  }
+
+  .navbar-links > a:not(.navbar-register):not(.navbar-login) {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+}
+
+@media (max-width: 950px) {
+  .site-navbar {
+    width: calc(100% - 28px);
+  }
+
+  .navbar-container {
+    min-height: 72px;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-menu-button {
+    display: grid;
+    place-items: center;
+  }
+
+  .mobile-menu {
+    display: grid;
+    gap: 8px;
+    padding: 12px 16px 18px;
+    border-top: 1px solid #eee5f2;
+  }
+
+  .mobile-menu a {
+    padding: 13px 14px;
+    border-radius: 12px;
+    color: #4c4353;
+    text-decoration: none;
+    font-weight: 800;
+  }
+
+  .mobile-menu a:hover {
+    background: #faf6fd;
+    color: #8a5fb2;
+  }
+
+  .mobile-register {
+    color: #ffffff !important;
+    text-align: center;
+    background: linear-gradient(
+      90deg,
+      #ff4f92,
+      #a08ac2
+    );
+  }
+}
+
+@media (max-width: 480px) {
+  .site-navbar {
+    top: 10px;
+    width: calc(100% - 18px);
+    border-radius: 18px;
+  }
+
+  .navbar-container {
+    padding: 0 13px;
+  }
+
+  .navbar-college-logo {
+    width: 46px;
+    height: 46px;
+    flex-basis: 46px;
+  }
+
+  .navbar-event-name {
+    font-size: 1.12rem;
+  }
+
+  .navbar-brand-content p {
+    font-size: 0.53rem;
+  }
+}

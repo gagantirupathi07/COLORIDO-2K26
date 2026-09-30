@@ -1,0 +1,137 @@
+.admin-registration-filters {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.admin-registration-search {
+  position: relative;
+  flex: 1;
+  min-width: 220px;
+}
+
+.admin-registration-search svg {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  color: #a08ac2;
+  pointer-events: none;
+}
+
+.admin-registration-search input {
+  width: 100%;
+  height: 50px;
+  padding: 0 16px 0 47px;
+  border: 1px solid #e4dce9;
+  border-radius: 15px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.95);
+  color: #342a3d;
+  font: inherit;
+  font-size: 0.8rem;
+  box-shadow:
+    0 12px 35px
+      rgba(124, 92, 255, 0.055);
+  transition: 0.2s ease;
+}
+
+.admin-registration-search input::placeholder {
+  color: #a198a7;
+}
+
+.admin-registration-search input:focus {
+  border-color: #a08ac2;
+  box-shadow:
+    0 0 0 4px
+      rgba(160, 138, 194, 0.1),
+    0 14px 35px
+      rgba(124, 92, 255, 0.08);
+}
+
+.admin-registration-filter-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.admin-registration-event-select {
+  min-width: 190px;
+  height: 50px;
+  padding: 0 14px;
+  border: 1px solid #e4dce9;
+  border-radius: 15px;
+  outline: none;
+  background: #ffffff;
+  color: #4f4158;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+  box-shadow:
+    0 12px 35px
+      rgba(124, 92, 255, 0.055);
+  cursor: pointer;
+}
+
+.admin-registration-event-select:focus {
+  border-color: #a08ac2;
+  box-shadow:
+    0 0 0 4px
+      rgba(160, 138, 194, 0.1);
+}
+
+.admin-registration-clear {
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0 12px;
+  border: 1px solid #e4dce9;
+  border-radius: 13px;
+  background: #ffffff;
+  color: #76667e;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 900;
+  transition: 0.2s ease;
+}
+
+.admin-registration-clear:hover {
+  border-color: #d1bfe0;
+  background: #fff8ff;
+  color: #7c5cff;
+}
+
+@media (max-width: 850px) {
+  .admin-registration-filters {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .admin-registration-filter-actions {
+    width: 100%;
+  }
+
+  .admin-registration-event-select {
+    flex: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-registration-filter-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .admin-registration-event-select {
+    width: 100%;
+  }
+
+  .admin-registration-clear {
+    width: 100%;
+  }
+}

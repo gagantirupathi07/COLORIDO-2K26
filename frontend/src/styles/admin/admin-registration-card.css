@@ -1,0 +1,210 @@
+.admin-registration-card {
+  display: flex;
+  gap: 17px;
+  min-width: 0;
+  padding: 21px;
+  border: 1px solid #eee4f4;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 15px 45px rgba(124, 92, 255, 0.06);
+  transition: 0.2s ease;
+}
+
+.admin-registration-card:hover {
+  border-color: #dccfe7;
+  transform: translateY(-1px);
+  box-shadow: 0 18px 50px rgba(124, 92, 255, 0.09);
+}
+
+.admin-registration-card-avatar {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 48px;
+  border-radius: 15px;
+  background: linear-gradient(
+    135deg,
+    #ff3cac,
+    #a08ac2,
+    #00cfff
+  );
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.admin-registration-card-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.admin-registration-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.admin-registration-code {
+  display: inline-block;
+  margin-bottom: 5px;
+  color: #8a5fb2;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.7px;
+}
+
+.admin-registration-card-heading h3 {
+  color: #291a32;
+  font-size: 1.08rem;
+  line-height: 1.3;
+}
+
+.admin-registration-email {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  color: #907f98;
+  font-size: 0.76rem;
+}
+
+.admin-registration-event {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-top: 17px;
+  padding: 14px 15px;
+  border: 1px solid #f0e9f3;
+  border-radius: 15px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 60, 172, 0.035),
+    rgba(160, 138, 194, 0.045),
+    rgba(0, 207, 255, 0.035)
+  );
+}
+
+.admin-registration-event div {
+  min-width: 150px;
+}
+
+.admin-registration-event span {
+  display: block;
+  margin-bottom: 4px;
+  color: #a198a7;
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.7px;
+}
+
+.admin-registration-event strong {
+  color: #342a3d;
+  font-size: 0.82rem;
+}
+
+.admin-registration-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 13px;
+}
+
+.admin-registration-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #76667e;
+  font-size: 0.74rem;
+}
+
+.admin-registration-meta svg {
+  color: #a08ac2;
+}
+
+.admin-registration-card-actions {
+  margin-top: 16px;
+}
+
+.admin-registration-view {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 35px;
+  padding: 0 12px;
+  border: 1px solid #e4dce9;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #7c5cff;
+  font-size: 0.74rem;
+  font-weight: 800;
+  transition: 0.2s ease;
+}
+
+.admin-registration-view:hover {
+  border-color: #cfc2ff;
+  background: #f5f0ff;
+}
+
+.admin-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 29px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.admin-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.admin-status-registered {
+  background: #fff1f8;
+  color: #d92f8b;
+}
+
+.admin-status-confirmed {
+  background: #eefbf7;
+  color: #079b76;
+}
+
+.admin-status-cancelled {
+  background: #fff1f4;
+  color: #d64b77;
+}
+
+.admin-status-completed {
+  background: #f0edff;
+  color: #7156c8;
+}
+
+.admin-status-unknown {
+  background: #f4eff7;
+  color: #76667e;
+}
+
+@media (max-width: 650px) {
+  .admin-registration-card {
+    padding: 17px;
+  }
+
+  .admin-registration-card-top {
+    flex-direction: column;
+  }
+
+  .admin-registration-event {
+    gap: 14px;
+  }
+
+  .admin-registration-event div {
+    min-width: 100%;
+  }
+}
