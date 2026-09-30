@@ -9,7 +9,7 @@ const axiosClient = axios.create({
 
 axiosClient.interceptors.request.use(
   (config) => {
-    const token = sessionStorage.getItem("colorido_token");
+    const token = localStorage.getItem("colorido_token");
 
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
@@ -28,8 +28,8 @@ axiosClient.interceptors.response.use(
   },
   (error) => {
     if (error.response?.status === 401) {
-      sessionStorage.removeItem("colorido_token");
-      sessionStorage.removeItem("colorido_user");
+      localStorage.removeItem("colorido_token");
+      localStorage.removeItem("colorido_user");
     }
 
     return Promise.reject(error);

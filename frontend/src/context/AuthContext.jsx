@@ -17,7 +17,7 @@ const USER_KEY = "colorido_user";
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
-    const savedUser = sessionStorage.getItem(USER_KEY);
+    const savedUser = localStorage.getItem(USER_KEY);
 
     if (!savedUser) {
       return null;
@@ -26,12 +26,20 @@ export function AuthProvider({ children }) {
     try {
       return JSON.parse(savedUser);
     } catch {
-      sessionStorage.removeItem(USER_KEY);
+      localStorage.removeItem(USER_KEY);
+      localStorage.removeItem(TOKEN_KEY);
       return null;
     }
   });
 
   const [loading, setLoading] = useState(true);
+
+  const clearAuth = () => {
+    localStorage.removeItem(TOKEN_KEY);
+    localStorage.removeItem(USER_KEY);
+    sessionStorage.removeItem(TOKEN_KEY);
+    sessionStorage.removeItem(USER_KEY);
+  };
 
   const saveAuth = (authData) => {
     if (!authData?.token) {
@@ -47,12 +55,15 @@ export function AuthProvider({ children }) {
       role: authData.role
     };
 
-    sessionStorage.setItem(
+    sessionStorage.removeItem(TOKEN_KEY);
+    sessionStorage.removeItem(USER_KEY);
+
+    localStorage.setItem(
       TOKEN_KEY,
       authData.token
     );
 
-    sessionStorage.setItem(
+    localStorage.setItem(
       USER_KEY,
       JSON.stringify(userData)
     );
@@ -73,8 +84,9 @@ export function AuthProvider({ children }) {
 
   const logout = () => {
     logoutUser();
-    sessionStorage.removeItem(TOKEN_KEY);
-    sessionStorage.removeItem(USER_KEY);
+
+    clearAuth();
+
     setUser(null);
   };
 
@@ -90,7 +102,7 @@ export function AuthProvider({ children }) {
 
     setUser(userData);
 
-    sessionStorage.setItem(
+    localStorage.setItem(
       USER_KEY,
       JSON.stringify(userData)
     );
@@ -100,13 +112,14 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     const initializeAuth = async () => {
-      const token = sessionStorage.getItem(TOKEN_KEY);
+      const token = localStorage.getItem(TOKEN_KEY);
 
       if (
         !token ||
         token === "undefined" ||
         token === "null"
       ) {
+        setUser(null);
         setLoading(false);
         return;
       }
@@ -114,8 +127,7 @@ export function AuthProvider({ children }) {
       try {
         await refreshUser();
       } catch {
-        sessionStorage.removeItem(TOKEN_KEY);
-        sessionStorage.removeItem(USER_KEY);
+        clearAuth();
         setUser(null);
       } finally {
         setLoading(false);
